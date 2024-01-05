@@ -11,8 +11,26 @@ class EmployeController extends AbstractController
     #[Route('/employe', name: 'app_employe')]
     public function index(): Response
     {
+        $employes=[
+
+            ['Name' => 'Larbin DeService',
+            'Age' => 42,
+            'Email' => 'avotreservice@jebosse.dur'],
+
+            ['Name' => 'Gaston Lagaffe',
+            'Age' => 33,
+            'Email' => 'legaffeur@editions-dupuis.be'],
+
+            ['Name' => 'Lilly Rose',
+            'Age' => 24,
+            'Email' => 'fleurbleue@naive.fr']
+        ];
+
+        dump($employes);
+
         return $this->render('employe/index.html.twig', [
-            'controller_name' => 'EmployeController',
+            'employes' => $employes,
+            'title' => 'Liste des employés'
         ]);
     }
 }
