@@ -13,7 +13,7 @@ class DefaultController
         return new Response('Files dans ta chambre !');
     }
 
-    #[Route('/number', 'number')]
+    #[Route('/number', 'app_number')]
     public function number(): Response
     {
         $number = random_int(0, 100);
@@ -26,5 +26,5 @@ class DefaultController
         return new Response('Mon nom est : '.$slug.'.');
     }
 
-    
+
 }
