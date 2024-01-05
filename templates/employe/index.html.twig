@@ -1,7 +1,75 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{title}}{% endblock %}
+{% block title %}
+	{{title}}
+{% endblock %}
 
 {% block body %}
+
+	<h1>{{title}}</h1>
+
+	{# <img src="{{ asset('img/JamesBond.jpg')}}" alt="Wesh Ma Gueule !"> #}
+
+	{# {{dump(employes, title)}} #}
+
+	<ul>
+
+		{% for larbin in employes %}
+			{% if larbin.Name == 'Larbin DeService' %}
+
+				<li>
+					<img src="{{ asset('img/Nestor.jpg')}}" alt="Wesh Ma Gueule !">
+					{{ larbin.Name }},
+					{{ larbin.Age }}
+					ans,
+					{{ larbin.Email }}
+
+				</li>
+
+			{% elseif larbin.Name == 'Gaston Lagaffe' %}
+
+				<li>
+					<img src="{{ asset('img/Gaston.jpg')}}" alt="Wesh Ma Gueule !">
+					{{ larbin.Name }},
+					{{ larbin.Age }}
+					ans,
+					{{ larbin.Email }}
+
+				</li>
+
+			{% elseif larbin.Name == 'Fleur' %}
+
+				<li>
+					<img src="{{ asset('img/Nunuche.webp')}}" alt="Wesh Ma Gueule !">
+					{{ larbin.Name }},
+					{{ larbin.Age }}
+					ans,
+					{{ larbin.Email }}
+
+				</li>
+
+			{% else %}
+
+				<li>
+
+					{{ larbin.Name }},
+					{{ larbin.Age }}
+					ans,
+					{{ larbin.Email }}
+
+				</li>
+
+			{% endif %}
+		{% endfor %}
+
+	</ul>
+
+	<p>
+		<a href="{{ path('homepage') }}">Home</a>
+	</p>
+
+	<p>
+		<a href="{{ path('name', {slug:'Bond. JAMES Bond'}) }}">Lien Twig avec paramètres</a>
+	</p>
 
 {% endblock %}

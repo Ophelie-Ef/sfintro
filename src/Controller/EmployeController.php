@@ -11,7 +11,7 @@ class EmployeController extends AbstractController
     #[Route('/employe', name: 'app_employe')]
     public function index(): Response
     {
-        $employes=[
+        $employesArray=[
 
             ['Name' => 'Larbin DeService',
             'Age' => 42,
@@ -26,10 +26,10 @@ class EmployeController extends AbstractController
             'Email' => 'fleurbleue@naive.fr']
         ];
 
-        dump($employes);
+        // dump($employesArray);
 
         return $this->render('employe/index.html.twig', [
-            'employes' => $employes,
+            'employes' => $employesArray,
             'title' => 'Liste des employés'
         ]);
     }
